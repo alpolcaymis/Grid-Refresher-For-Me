@@ -1,19 +1,69 @@
 * {
-  margin: 0;
+  box-sizing: border-box;
   padding: 0;
+  margin: 0;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: antiquewhite;
-  background: #432156;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background: #f5f5f5;
 }
 .container {
+  max-width: 960px;
+  margin: 100px auto;
+  padding: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  /* 
+  align-items: center;
+  justify-content: end; */
+
+  /* row-gap: 10px;
+  column-gap: 10px; */
+  /* grid-auto-rows: minmax(200px, auto); */
+  /* grid-template-rows: 1fr max-content 0.5fr; */
+  /* grid-template-rows: repeat(3, 10%); */
 }
 
 .item {
-  margin: 10px;
-  text-align: center;
+  background: steelblue;
+  color: #fff;
+  font-size: 20px;
+  padding: 20px;
+  border: skyblue 1px solid;
+}
+
+/* .item:nth-of-type(1) {
+  background-color: brown;
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+/* grid-column: 1 / 3; */
+/* grid-column: 1 / span 2; */
+
+/* height: 100px;
+  width: 100px;
+  align-self: center;
+  justify-self: end; 
+}
+
+.item:nth-of-type(3) {
+  background-color: orange;
+  grid-row: 2/4;
+}
+.item:nth-of-type(4) {
+  background-color: yellow;
+  grid-row: 2/4;
+} */
+
+/* max-width means that run until exceed 780px */
+/* 780px screen also turns true */
+@media (max-width: 780px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
